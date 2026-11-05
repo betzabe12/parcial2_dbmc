@@ -1,0 +1,16 @@
+{
+  "JS-001": {
+    "occurrences": 9,
+    "confidence": 1,
+    "mastered_explicitly": false,
+    "first_seen": "2026-11-05T11:51:22.423Z",
+    "last_seen": "2026-11-05T13:48:51.177Z"
+  },
+  "ASYNC-001": {
+    "occurrences": 10,
+    "confidence": 1,
+    "mastered_explicitly": false,
+    "first_seen": "2026-11-05T13:48:28.811Z",
+    "last_seen": "2026-11-05T13:48:51.176Z"
+  }
+}
