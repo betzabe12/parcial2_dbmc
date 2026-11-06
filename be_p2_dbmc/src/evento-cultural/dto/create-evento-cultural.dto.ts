@@ -1,6 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { EstadoEvento } from '../entities/evento-cultural.entity.js';
+import { EstadoEvento, ModalidadIngreso } from '../entities/evento-cultural.entity.js';
 import { IsDateString, IsEnum, IsInt, IsNotEmpty, IsNumber, IsPositive, IsString, MaxLength, Min } from 'class-validator';
+
 export class CreateEventoCulturalDto {
     @ApiProperty({ description: 'ID del recinto donde se realizará el evento', example: 1 })
     @IsInt({ message: 'El id_recinto debe ser un número entero' })
@@ -44,4 +45,13 @@ export class CreateEventoCulturalDto {
     @IsEnum(EstadoEvento, { message: 'El estado debe ser: Programado, Agotado o Cancelado' })
     @IsNotEmpty({ message: 'El estado es obligatorio' })
     estado: EstadoEvento;
+
+    @ApiProperty({
+        description: 'Modalidad de ingreso al evento',
+        enum: ModalidadIngreso,
+        example: ModalidadIngreso.GRATUITA
+    })
+    @IsEnum(ModalidadIngreso, { message: 'La modalidad de ingreso debe ser: entrada pagada, entrada gratuita o pase Invitacion' })
+    @IsNotEmpty({ message: 'La modalidad de ingreso es obligatoria' })
+    modalidad_ingreso: ModalidadIngreso;
 }
